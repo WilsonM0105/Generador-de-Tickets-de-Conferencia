@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Entradas | Coding Conf 2025</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="logo-full">
+      <img src="assets/images/logo-full.svg" alt="Coding Conf 2025" />
+    </header>
+    <main>
+      <h1>¡Tu viaje a Coding Conf 2025 empieza aquí!</h1>
+      <p>
+        Asegura tu lugar en la conferencia de programación más grande del año.
+      </p>
+
+      <form id="ticket-form" novalidate>
+        <fieldset>
+          <legend>Formulario de registro</legend>
+
+          <div class="upload-wrapper">
+            <label for="avatar" class="upload-label">
+              <img
+                src="assets/images/icon-upload.svg"
+                alt="Ícono de subir archivo"
+              />
+              <span>Sube tu foto (JPG o PNG, máx. 500KB)</span>
+            </label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept="image/png, image/jpeg"
+              required
+            />
+          </div>
+
+          <label for="fullName">Nombre completo</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required />
+
+          <div class="input-icon">
+            <img src="assets/images/icon-github.svg" alt="GitHub" />
+            <input
+              type="text"
+              id="github"
+              name="github"
+              required
+              placeholder="@usuario"
+            />
+          </div>
+
+          <button type="submit">Generar mi entrada</button>
+        </fieldset>
+      </form>
+
+      <div id="form-errors" role="alert" aria-live="assertive"></div>
+
+      <section id="ticket-result" hidden>
+        <h2>🎟️ ¡Felicidades, <span id="ticket-name"></span>!</h2>
+        <p>Tu entrada ha sido enviada a <span id="ticket-email"></span>.</p>
+
+        <div class="ticket">
+          <img id="ticket-avatar" alt="Avatar del asistente" />
+          <h3>Coding Conf 2025</h3>
+          <p>31 de enero de 2025 · Austin, TX</p>
+          <p>GitHub: <span id="ticket-github"></span></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Reto de
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Hecho por <a href="#">Wilson Mites</a>.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <img
+      src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
+      alt=""
+      class="background-decoration bottom-squiggly"
+    />
+  </body>
+</html>

@@ -10,6 +10,7 @@ document.getElementById('ticket-form').addEventListener('submit', function (e) {
 
   const avatarFile = avatarInput.files[0];
 
+  // Validaciones
   if (!fullName || !email || !github || !avatarFile) {
     errorBox.textContent = 'Por favor, completa todos los campos.';
     return;
@@ -31,6 +32,7 @@ document.getElementById('ticket-form').addEventListener('submit', function (e) {
     return;
   }
 
+  // Mostrar ticket
   document.getElementById('ticket-name').textContent = fullName;
   document.getElementById('ticket-email').textContent = email;
   document.getElementById('ticket-github').textContent = github;
@@ -42,5 +44,6 @@ document.getElementById('ticket-form').addEventListener('submit', function (e) {
   };
   reader.readAsDataURL(avatarFile);
 
+  // Limpiar formulario (opcional)
   this.reset();
 });

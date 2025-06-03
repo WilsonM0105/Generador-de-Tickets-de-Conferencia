@@ -4,65 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generador de Entradas | Coding Conf 2025</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="logo-full">
       <img src="assets/images/logo-full.svg" alt="Coding Conf 2025" />
     </header>
+
     <main>
-      <h1>¡Tu viaje a Coding Conf 2025 empieza aquí!</h1>
-      <p>
-        Asegura tu lugar en la conferencia de programación más grande del año.
-      </p>
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p>Secure your spot at next year's biggest coding conference.</p>
 
       <form id="ticket-form" novalidate>
         <fieldset>
-          <legend>Formulario de registro</legend>
+          <legend class="form-title">Formulario de registro</legend>
 
-          <div class="upload-wrapper">
-            <label for="avatar" class="upload-label">
-              <img
-                src="assets/images/icon-upload.svg"
-                alt="Ícono de subir archivo"
+          <!-- Avatar -->
+          <div class="form-group">
+            <label for="avatar" class="form-label">Upload Avatar</label>
+            <div class="upload-wrapper">
+              <label for="avatar" class="upload-label">
+                <img
+                  src="assets/images/icon-upload.svg"
+                  alt="Ícono de subir archivo"
+                />
+                <span>Drag and drop or click to upload</span>
+              </label>
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                accept="image/png, image/jpeg"
+                required
               />
-              <span>Sube tu foto (JPG o PNG, máx. 500KB)</span>
-            </label>
+              <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
             <input
-              type="file"
-              id="avatar"
-              name="avatar"
-              accept="image/png, image/jpeg"
+              type="email"
+              id="email"
+              name="email"
               required
+              placeholder="example@email.com"
             />
           </div>
 
-          <label for="fullName">Nombre completo</label>
-          <input type="text" id="fullName" name="fullName" required />
-
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required />
-
-          <div class="input-icon">
-            <img src="assets/images/icon-github.svg" alt="GitHub" />
-            <input
-              type="text"
-              id="github"
-              name="github"
-              required
-              placeholder="@usuario"
-            />
+          <!-- GitHub -->
+          <div class="form-group">
+            <label for="github" class="form-label">GitHub Username</label>
+            <div class="input-icon">
+              <img src="assets/images/icon-github.svg" alt="GitHub" />
+              <input
+                type="text"
+                id="github"
+                name="github"
+                required
+                placeholder="@yourusername"
+              />
+            </div>
           </div>
 
-          <button type="submit">Generar mi entrada</button>
+          <button type="submit">Generate My Ticket</button>
         </fieldset>
       </form>
 
       <div id="form-errors" role="alert" aria-live="assertive"></div>
 
       <section id="ticket-result" hidden>
-        <h2>🎟️ ¡Felicidades, <span id="ticket-name"></span>!</h2>
-        <p>Tu entrada ha sido enviada a <span id="ticket-email"></span>.</p>
+        <h2>🎟️ ¡Congratulations, <span id="ticket-name"></span>!</h2>
+        <p>Your ticket has been send it to <span id="ticket-email"></span>.</p>
 
         <div class="ticket">
           <img id="ticket-avatar" alt="Avatar del asistente" />
@@ -81,12 +101,12 @@
       </p>
     </footer>
 
-    <script src="script.js"></script>
-
     <img
       src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
       alt=""
       class="background-decoration bottom-squiggly"
     />
+
+    <script src="script.js"></script>
   </body>
 </html>
